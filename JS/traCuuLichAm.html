@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tra cứu lịch âm</h1>
+    <input type="text" id="duong" placeholder="Nhập năm dương lịch">
+    <button onclick="xem()">Xem</button>
+    <h2 id="am"></h2>
+    <script>
+        function xem(){
+            let duongLich = document.getElementById("duong").value;
+            let am = "";
+            let can = duongLich % 10;
+            let chi = duongLich % 12;
+            let mangCan = ['canh', 'tân', 'nhâm' , 'quý', 'giáp' , 'ất' ,'bính','đinh','mậu','kỷ'];
+            let mangChi = ['thân', 'dậu', 'tuất' , 'hợi', 'tí' , 'sửu' ,'dần','mẹo','thìn','tị','ngọ','mùi'];
+            document.getElementById("am").innerHTML = "Năm âm lịch là " + mangCan[can]+" "+mangChi[chi];
+        }
+    </script>
+</body>
+</html>

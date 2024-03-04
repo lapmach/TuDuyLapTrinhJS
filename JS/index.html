@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //===xuat====
+        // alert("hello");
+        // document.write("chao xìn");
+        // document.write("<h1>ni hao</h1>");
+        // console.log("hi");
+        //===nhap====
+
+        // let a = +prompt("moi ban nhap a");
+        // let b = +prompt("moi ban nhap b");
+        // x = a + b;
+        // alert(x);
+
+        let tienVay = +prompt("Nhập tiền vay: ");
+        let laiSuat = +prompt("Nhập lãi suất: ");
+        let nam = +prompt("Nhap số năm: ");
+
+        // tienLai = tienVay * (laiSuat/100);
+        // tongTien = tienVay + nam*tienLai;
+        tongTien = tienVay * (laiSuat + 1) ** nam;
+        document.write("Số tiền phải trả là " +tongTien+" triệu đồng");
+    </script>
+</body>
+</html>

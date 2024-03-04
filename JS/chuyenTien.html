@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- if(tienMuonDoi == 1 && tienMuonDoi != tienDaDoi){
+        tienChuyenDoi = soTien/tienUSD;
+        document.getElementById("kq").innerHTML = "Result: " +tienChuyenDoi +" USD";
+    }else if(tienMuonDoi == 2 && tienMuonDoi != tienDaDoi){
+        tienChuyenDoi = soTien*tienUSD;
+        document.getElementById("kq").innerHTML = "Result: " +tienChuyenDoi +" VND";
+    }else{
+        tienChuyenDoi = 1;
+        document.getElementById("kq").innerHTML = "Result: " +tienChuyenDoi;
+    } -->
+    
+   
+    <label for="soTien">Amount</label>
+    <input type="text" id="soTien">
+    <label for="">From</label>
+    <select name="" id="tienMuonDoi">
+        <option value="1">Vietnam</option>
+        <option value="24415">USD</option>
+        <option value="165">Yên Nhật</option>
+    </select>
+    <label for="">To</label>
+    <select name="" id="tienDaDoi">
+        <option value="1">Vietnam</option>
+        <option value="24415">USD</option>
+        <option value="165">Yên Nhật</option>
+    </select>
+    <button onclick="chuyenTien()">Convert</button>
+    <h1 id="kqua"></h1>
+    <script>
+        function chuyenTien(){
+            let soTien = document.getElementById("soTien").value;
+            let tienMuonDoi = document.getElementById("tienMuonDoi").value;
+            let tienDaDoi = document.getElementById("tienDaDoi").value;       
+            tienchuyendoi = (soTien*tienMuonDoi)/tienDaDoi;
+            if(tienDaDoi == 1){
+                document.getElementById("kqua").innerHTML = "Result: " + tienchuyendoi +" VNĐ";
+            }else if(tienDaDoi == 24000){
+                document.getElementById("kqua").innerHTML = "Result: " + tienchuyendoi + " Đô la";
+            }else{
+                document.getElementById("kqua").innerHTML = "Result: " + tienchuyendoi +" Yên";
+            }
+            
+        }
+
+       let soDienTieuThu = +prompt("nhập số điện tiêu thụ: ");
+
+       if(soDienTieuThu >= 1 && soDienTieuThu <=99){
+            giaTien = 1800*soDienTieuThu;
+       }else if(soDienTieuThu >= 100 && soDienTieuThu <=199){
+            giaTien = 2000*soDienTieuThu;
+       }else{
+            giaTien = 2000*soDienTieuThu;
+       }
+    
+       document.write("Số tiền phải trả cho "+soDienTieuThu+" điện tiêu thụ là "+giaTien+" đồng" );
+            
+    </script>
+</body>
+</html>

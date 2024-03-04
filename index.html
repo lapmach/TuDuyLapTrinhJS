@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .head{
+        display: flex;
+        height: auto;
+    }
+    .logo{
+        width: 25%;
+        height: 100px;
+        border: 2px solid black;
+        margin-right: 10px;
+    }
+    .banner{
+        width: 75%;
+        height: 100px;
+        border: 2px solid black;
+    }
+    .menu{
+        height: 50px;
+        border: 2px solid black;
+        margin-top: 10px;
+    }
+    .body{
+        display: flex;
+    }
+    .left{
+        width: 15%;
+    }
+    .left .box1{
+        height: 150px;
+        border: 2px solid black;
+        margin-top: 10px;
+    }
+    .left .box2{
+        height: 220px;
+        border: 2px solid black;
+        margin-top: 10px;
+    }
+    .center{
+        width: 70%;
+        margin-top: 10px;
+    }
+    .center .content1,.center .content2{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .center .content1 .box1{
+        width: 50%;
+        border: 2px solid black;
+        height: 100px;
+        margin-left: 5px;
+    }
+    .center .content1 .box2{
+        width: 47%;
+        border: 2px solid black;
+        height: 100px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .center .content2 .box{
+        width: 32%;
+        border: 2px solid black;
+        height: 100px;
+        margin-left: 5px;
+        margin-top: 10px;
+    }
+    .right{
+        width: 15%;
+    }
+    .right .box{
+        height: 420px;
+        border: 2px solid black;
+        margin-top: 10px;
+    }
+    .footer{
+        height: 100px;
+        border: 2px solid black;
+        margin-top: 10px;
+    }
+</style>
+<body>
+    <header class="head">
+        <div class="logo"></div>
+        <div class="banner"></div>
+    </header>
+    <nav>
+        <div class="menu"></div>
+    </nav>
+    <main class="body">
+        <div class="left">
+            <div class="box1"></div>
+            <div class="box2"></div>
+        </div>
+        <div class="center">
+            <div class="content1">
+                <div class="box1"></div>
+                <div class="box2"></div>
+            </div>
+            <div class="content2">
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+        <div class="right">
+            <div class="box"></div>
+        </div>
+    </main>
+    <footer class="footer"></footer>
+</body>
+</html>

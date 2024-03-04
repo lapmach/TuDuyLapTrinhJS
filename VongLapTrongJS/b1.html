@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="soChan"></h1>
+    <h2 id="soLe"></h2>
+    <script>
+        let a = +prompt("nhập a");
+        let b = +prompt("nhập b");
+        
+
+        while(b>=a){
+            if(a%2==0){
+                // document.getElementById("soChan").innerHTML = a + " ";
+                document.write("<h1>" + a + "</h1>")
+            }else{
+                // document.getElementById("soLe").innerHTML = a + " ";
+                document.write("<h2>" + a + "</h2>")
+            }
+            a+=1;
+        }
+    </script>
+</body>
+</html>

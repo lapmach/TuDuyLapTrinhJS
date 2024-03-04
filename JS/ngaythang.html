@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="month">
+    <button onclick="doingay()">tính</button>
+    <p id="day"></p>
+
+    <script>
+        
+        function doingay(){
+            let thang = document.getElementById("month").value; 
+            if(thang==1 || thang==3 || thang==5 || thang==7 || thang==8 || thang==10 || thang==12)
+            {
+                document.getElementById("day").innerHTML = "tháng" + thang +" có số ngày là 31";
+            }else if(thang==4 || thang==6 || thang==9 || thang==11){
+                document.getElementById("day").innerHTML = "tháng" + thang +" có số ngày là 30";
+            }else if(thang==2){
+                document.getElementById("day").innerHTML = "tháng" + thang +" có số ngày là 28 hoặc 29";
+            }else{
+                document.getElementById("day").innerHTML = "nhập tháng sai" ;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div style="width: 300px; height: 300px; background-color: black;" id="box"></div>
+    <input type="text" name="" id="" oninput="document.getElementById('box').style.backgroundColor = 'red'">
+    <input type="text" name="" id="" onchange="thayDoi()">
+    <button onclick="document.getElementById('box').style.width = '500px'">an vao</button> -->
+    <input type="text" id="s1">
+    <input type="text" id="s2">
+    <button onclick="tong()">Cong</button>
+    <button onclick="tru()">tru</button>
+    <button onclick="nhan()">nhan</button>
+    <button onclick="chia()">chia</button>
+    <h1 id="kq"></h1>
+    <script>
+        // function thayDoi(){
+        //     document.getElementById('box').style.backgroundColor = 'blue';
+        //     document.getElementById('box').style.width = '500px'
+        // }
+        function tong(){
+            let a = +document.getElementById("s1").value;
+            let b = +document.getElementById("s2").value;
+            document.getElementById("kq").innerHTML = "Tong la = " + (a + b);
+        }
+        function tru(){
+            let a = +document.getElementById("s1").value;
+            let b = +document.getElementById("s2").value;
+            document.getElementById("kq").innerHTML = "tru la = " + (a - b);
+        }
+        function nhan(){
+            let a = +document.getElementById("s1").value;
+            let b = +document.getElementById("s2").value;
+            document.getElementById("kq").innerHTML = "nhan la = " + (a * b);
+        }
+        function chia(){
+            let a = document.getElementById("s1").value;
+            let b = document.getElementById("s2").value;
+            document.getElementById("kq").innerHTML = "chia la = " + (a / b);
+        }
+    </script>
+</body>
+</html>

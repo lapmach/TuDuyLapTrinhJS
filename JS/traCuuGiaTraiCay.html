@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Giá Hoa Quả</h1>
+    <input type="text" id="traiCay">
+    <button onclick="traCuuGia()">Tra Cứu</button>
+    <h2 id="kq"></h2>
+
+    <script>
+        function traCuuGia(){
+            let traiCay = document.getElementById("traiCay").value.toLowerCase();
+
+            if(traiCay == "măng cụt"){
+                document.getElementById("kq").innerHTML = "Măng cụt có giá là 25.000VND/kg"
+            }else if(traiCay == "ổi"){
+                document.getElementById("kq").innerHTML = "Ổi có giá là 3000VND/kg"
+            }else if(traiCay == "dưa hấu"){
+                document.getElementById("kq").innerHTML = "Dưa hấu có giá là 10.000VND/kg"
+            }else if(traiCay == "táo"){
+                document.getElementById("kq").innerHTML = "Táo có giá là 50.000VND/kg"
+            }else if(traiCay == "xoài"){
+                document.getElementById("kq").innerHTML = "Xoài có giá là 15.000VND/kg"
+            }else if(traiCay == "cam"){
+                document.getElementById("kq").innerHTML = "Cam có giá là 35.000VND/kg"
+            }else if(traiCay == "chôm chôm"){
+                document.getElementById("kq").innerHTML = "Chôm chôm có giá là 30.000VND/kg"
+            }else{
+                document.getElementById("kq").innerHTML = "Không có loại trái cây bạn tìm"
+            }
+        }
+    </script>
+</body>
+</html>

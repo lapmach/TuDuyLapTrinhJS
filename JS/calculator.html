@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="src">
+    <button onclick="nhap('1')">1</button>
+    <button onclick="nhap('2')">2</button>
+    <button onclick="nhap('3')">3</button>
+    <button onclick="nhap('4')">4</button>
+    <button onclick="nhap('5')">5</button>
+    <button onclick="nhap('6')">6</button>
+    <button onclick="nhap('7')">7</button>
+    <button onclick="nhap('8')">8</button>
+    <button onclick="nhap('9')">9</button>
+    <button onclick="nhap('+')">+</button>
+    <button onclick="nhap('-')">-</button>
+    <button onclick="nhap('x')">x</button>
+    <button onclick="nhap('/')">÷</button>
+    <button onclick="xoa()">Nhập lại</button>
+    <button onclick="tinh()">=</button>
+    <script>
+        function nhap(x){
+            document.getElementById("src").value += x;
+        }
+        function xoa(){
+            document.getElementById("src").value = " ";
+        }
+        function tinh(){
+            let bienLuu = document.getElementById("src").value;       
+            alert(eval(bienLuu));
+        }
+    </script>
+</body>
+</html>
