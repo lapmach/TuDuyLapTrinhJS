@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = +prompt("nhập n");
+        let s = +prompt("nhập s");
+
+        for(let x = 0; x <= n; x++)
+        {
+            for(let y = 0; y <= n; y++)
+            {
+                for(let z = 0; z <= n; z++)
+                {
+                    if(x+y+z==2){
+                        document.write(x +","+y+","+z +"<br>");
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
