@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = +prompt("nhập a");
+        let b = +prompt("nhập b");
+        let c = +prompt("nhập c");
+
+        let sln = a;
+        if(b > sln && b > c){
+            sln = b;
+        }else if(c > sln && c > b){
+            sln = c;
+        }
+
+        for(let x=0; x <= sln; x++){
+            for(let y=0; y <= sln; y++){
+                for(let z=0; z <= sln; z++){
+                    if(x==a || x==b || x==c && y==a || y==b || y==c && z==a || z==b || z==c){
+                        document.write(x+""+y+""+z + "<br>");
+                    }
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
