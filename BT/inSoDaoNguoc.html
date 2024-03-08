@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nhap = +prompt("nhập số nguyên dương: ");
+        soChuc = 0;
+        soCham = 0;
+
+        soCuoi = nhap%10;
+        soChuc = Math.floor(nhap/10);
+        soGiua = soChuc%10;
+        soDon = Math.floor(nhap/100);
+        alert(soCuoi+""+soGiua+""+soDon);
+    </script>
+</body>
+</html>
