@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="troChoi()">Chơi</button>
+    <script>
+        function troChoi(){
+            let x = +prompt("nhập vào x (từ 0 -> x): ");
+            var snn = Math.floor(Math.random() * x);
+            let nhap = +prompt("nhập vào số muốn đoán: ");
+            let dem = 0;
+            do{
+                if(nhap == snn){
+                    alert("chúc mừng bạn đoán đúng" + snn);
+                }else{
+                    alert("Bạn đoán sai rùi !!" + snn);
+                    nhap = +prompt("nhập vào số muốn đoán: ");
+                    snn = Math.floor(Math.random() * x);
+                }
+                dem++;
+            }while(dem < 3);
+            
+        }
+    </script>
+</body>
+</html>
