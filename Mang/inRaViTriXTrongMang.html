@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Nhap X va in ra vi tri cua X
+        // let x = +prompt("nhập x: ");
+        // let mang = [22,44,55,25,1,16,98,55];
+        // let index = 0;
+        // for(let i = 0 ; i< mang.length ; i++){
+        //     if(mang[i] == x){
+        //         index = i;
+        //         document.write("Vị trí của "+ x +" là " + index + "<br>");
+        //     }
+        // }
+
+        let mang = [22,44,55,25,1,16,98,55];
+        let indexMax = 0;
+        let max = mang[0];
+        for(let i = 0 ; i< mang.length ; i++){
+            if(mang[i] > max){
+                max = mang[i];
+                indexMax = i;
+            }
+        }
+        document.write("max = " + max + " tai vi tri " + indexMax);
+    </script>
+</body>
+</html>

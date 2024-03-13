@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [22,44,55,25,1,16,98];
+        for(let i=0;i<arr.length;i++){
+            for(let j=i+1; j<arr.length;j++){
+                if(arr[i] < arr[j]){
+                    let temp = arr[j];
+                    arr[j] = arr[i];
+                    arr[i] = temp;
+                }
+            }
+        }
+
+        let maxFirst = arr[0];
+        let maxSecond = arr[1];
+        if(maxFirst == maxSecond){
+            for(let i=2 ; i< arr.length;i++){
+                if(arr[i] < maxSecond){
+                    maxSecond = arr[i];
+                }
+            }
+        }
+
+        document.write("max thứ 2: " + maxSecond);
+    </script>
+</body>
+</html>
