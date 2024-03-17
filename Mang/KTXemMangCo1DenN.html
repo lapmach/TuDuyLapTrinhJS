@@ -9,29 +9,39 @@
     <script>
         let n = +prompt("nhập n: ");
         let mang = [5 , 6 ,4 , 9 , 2 , 1 ,3];
-        let mangN = [];
 
-        for(let i = 1; i<=n ;i++){
-            mangN.push(i);
+        let check = "Mảng chứa toàn bộ các số từ 1 - n";
+        for(let i=1 ; i<=n;i++){
+            if(mang.indexOf(i) == -1){
+                check = "Mảng không chứa toàn bộ các số từ 1 - n";
+                break
+            }
         }
+
+        document.write(check);
+        // let mangN = [];
+
+        // for(let i = 1; i<=n ;i++){
+        //     mangN.push(i);
+        // }
         
-        for(let i= 0;i<mang.length;i++){
-            for(let j= i+1; j<mang.length;j++){
-                if(mang[i] > mang[j]){
-                    let temp = mang[j];
-                    mang[j] = mang[i];
-                    mang[i] = temp;
-                }
-            }       
-        }
+        // for(let i= 0;i<mang.length;i++){
+        //     for(let j= i+1; j<mang.length;j++){
+        //         if(mang[i] > mang[j]){
+        //             let temp = mang[j];
+        //             mang[j] = mang[i];
+        //             mang[i] = temp;
+        //         }
+        //     }       
+        // }
 
-        for(let i= 0;i<mang.length;i++){
-                if(mangN[i] == mang[i]){
-                    document.write("có chứa");
-                }else{
-                    document.write("mang ko có chứa");
-                }
-            }       
+        // for(let i= 0;i<mang.length;i++){
+        //         if(mangN[i] == mang[i]){
+        //             document.write("có chứa");
+        //         }else{
+        //             document.write("mang ko có chứa");
+        //         }
+        //     }       
         
     </script>
 </body>
