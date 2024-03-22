@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="/Ham/img/aaa.jpg" alt="" style="top: 100px; left: 200px; position: absolute; width: 100px;" id="x">
+    <script>
+        
+        let speedX = 0;
+        let speedY = 1;
+      setInterval(() => {
+        xx = document.getElementById("x");
+        xx.style.left = parseInt(xx.style.left) + speedX + "px";
+        xx.style.top = parseInt(xx.style.top) + speedY + "px";
+        if (parseInt(xx.style.left) >= window.innerWidth - 100 || parseInt(xx.style.left) <= 0) {
+          speedX = -speedX;
+        }
+        if (parseInt(xx.style.top) >= window.innerHeight - 100 || parseInt(xx.style.top) <= 0) {
+          speedY = -speedY;
+        }
+      }, 1);
+
+      window.addEventListener('keydown', (e) => {
+            if(e.key == 'ArrowLeft'){
+                 speedX = -1;
+                 speedY = 0;
+            }
+            if(e.key == 'ArrowRight'){
+                 speedX = 1;
+                 speedY = 0;
+            }
+            if(e.key == 'ArrowUp'){
+                 speedX = 0;
+                 speedY = -1;
+            }
+            if(e.key == 'ArrowDown'){
+                 speedX = 0;
+                 speedY = 1;
+            }
+    })
+    </script>
+</body>
+</html>

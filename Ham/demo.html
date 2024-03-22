@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="/Ham/img/aaa.jpg" alt="" style="top: 100px; left: 200px; position: absolute; width: 100px;" id="x">
+    <button onclick="phai()">ben phai</button>
+    <button onclick="trai()">ben trai</button>
+    <button onclick="len()">len</button>
+    <button onclick="xuong()">xuong</button>
+    <script>
+        function phai(){
+            let xx = document.getElementById("x");
+            xx.style.left = parseInt(xx.style.left) + 20 + "px";
+        }
+        function trai(){
+            let xx = document.getElementById("x");
+            xx.style.left = parseInt(xx.style.left)  -20 + "px";
+        }
+        function len(){
+            let xx = document.getElementById("x");
+            xx.style.top = parseInt(xx.style.top)  -20 + "px";
+        }
+        function xuong(){
+            let xx = document.getElementById("x");
+            xx.style.top = parseInt(xx.style.top) + 20 + "px";
+        }
+    //     setInterval(() => {
+    //         let speedX = 1;
+    //         let xx = document.getElementById("x");
+    //         xx.style.left = parseInt(xx.style.left) + speedX + "px";
+    //         if(parseInt(xx.style.left) >= window.innerWidth -100 || parseInt(xx.style.left) <= 0){
+    //             speedX = -speedX;
+    //         }
+    //   }, 1);
+
+    window.addEventListener('keydown', (e) => {
+            if(e.key == 'ArrowLeft'){
+                trai();
+            }
+            if(e.key == 'ArrowRight'){
+                phai();
+            }
+            if(e.key == 'ArrowUp'){
+                len();
+            }
+            if(e.key == 'ArrowDown'){
+                xuong();
+            }
+    })
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="showList()">List</button>
+    <button onclick="showFormAdd()">ADD</button>
+    <div id="display">
+
+    </div>
+    <script>
+        let ListSP = ['ip14','note24','mi14'];
+        showList();
+        function showList(){
+            let str = '<h1>Danh Sách Sản Phẩm</h1>'
+            str+= `<p>Số lượng sản phẩm: ${ListSP.length}</p>`
+            for(let i=0; i<ListSP.length;i++){
+                str += `<h3>${ListSP[i]} <button onclick = "edit(${i})">edit</button></h3>`
+            }
+            document.getElementById("display").innerHTML = str;
+        }
+
+        function showFormAdd(){
+            str = '<input id="inp"> <button onclick = "add()">create</button>'
+            document.getElementById("display").innerHTML = str;
+        }
+
+        function add(){
+            ListSP.push(document.getElementById("inp").value);
+            showList();
+        }
+
+        function edit(index){
+            str = `<input id="inp" value = ${ListSP[index]}>  <button onclick = "save(${index})">save</button>`
+            document.getElementById("display").innerHTML = str;
+        }
+
+        function save(index){
+            ListSP[index] = document.getElementById("inp").value;
+            showList();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function SNT(x){
+            if(x < 2)
+                return false;
+
+            for(let i=2 ; i<x-1 ;i++){
+                if(x%i == 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+        function inRaSNT(n){
+            document.write(2);
+            let x = 3;
+            let dem = 1;
+            while(dem <= n-1){
+                if(SNT(x)){
+                    document.write("<br>" + x);
+                    dem++
+                }
+                x++;
+            }
+        }
+        inRaSNT(15);
+    </script>
+</body>
+</html>
