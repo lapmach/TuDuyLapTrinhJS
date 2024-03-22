@@ -18,7 +18,7 @@
             let str = '<h1>Danh Sách Sản Phẩm</h1>'
             str+= `<p>Số lượng sản phẩm: ${ListSP.length}</p>`
             for(let i=0; i<ListSP.length;i++){
-                str += `<h3>${ListSP[i]} <button onclick = "edit(${i})">edit</button></h3>`
+                str += `<h3>${ListSP[i]} <button onclick = "edit(${i})">edit</button> <button onclick = "Delete(${i})">delete</button></h3>`
             }
             document.getElementById("display").innerHTML = str;
         }
@@ -40,6 +40,11 @@
 
         function save(index){
             ListSP[index] = document.getElementById("inp").value;
+            showList();
+        }
+
+        function Delete(index){
+            ListSP.splice(ListSP[index],1);
             showList();
         }
     </script>
