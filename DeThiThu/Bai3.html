@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function SNT(a){
+            if(a < 2)
+                return false;
+
+            for(let i=2 ; i<a-1 ;i++){
+                if(a%i == 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function sumOfListPrime(x){
+            let tong = 0;
+            let a = 2;
+            let dem =0
+           while(dem<x){
+                if(SNT(a) == true){
+                    tong+=dem;
+                }
+                dem++;
+            }
+            return tong;
+        }
+        alert("Tổng = " + sumOfListPrime(6));
+    </script>
+</body>
+</html>

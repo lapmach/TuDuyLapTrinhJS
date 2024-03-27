@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        let mangDiem = [];
+        function findAvg(mangDiem){
+            let dem = 0;
+            let tong = 0;
+            let trungBinh = 0 ;
+            for(let i=0; i < mangDiem.length ; i++){
+                tong+=mangDiem[i];
+                dem++;
+            }
+            trungBinh = tong/dem;
+            return trungBinh;
+        }
+        alert("Điểm TB = " + findAvg([5,6,8,9,10,6,4.5]));
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = {
+            ten: "Duy",
+            diem: 8,
+            xeploai: "gioi",
+        };
+        let b = {
+            ten: "Nam",
+            diem: 9,
+            xeploai: "kha",
+        };
+
+        alert(a.ten + a.diem + a.xeploai);
+
+        class student{
+            constructor(name,id,age){
+                this.name = name;
+                this.id = id;
+                this.age = age;
+            }
+            f1(){
+                alert(this.name + " , " + this.id + " , " + this.age);
+            }
+        }
+
+        let s1 = new student("Roman", "MD005" , "18");
+        s1.f1();
+
+        class produce{
+            constructor(id,name,price,quantity){
+                this.id =id;
+                this.name= name;
+                this.price =price;
+                this.quantity =quantity;
+            }
+            getI4(){
+                alert(this.id +","+this.name+","+this.price+","+this.quantity);
+            }
+        }
+
+        let p1 = new produce("T01","Milk",16000,5);
+        p1.getI4();
+    </script>
+</body>
+</html>
