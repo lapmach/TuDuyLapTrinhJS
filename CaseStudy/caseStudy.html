@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="caseStudy.css">
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="formNV">
+        <h2>Nhập Thông Tin Nhân Viên</h2>
+        <label for="">Họ Tên</label>
+        <input type="text" id="nameNV">
+        <span id="tenNV_error" class="error"></span>
+        <br>
+        <label for="">Mã Nhân Viên</label>
+        <input type="text" id="idNV">
+        <span id="maNV_error" class="error"></span>
+        <br>
+        <label for="">Mức Lương</label>
+        <input type="text" id="salaryNV">
+        <span id="luongNV_error" class="error"></span>
+        <br>
+        <label for="">Quê Quán</label>
+        <input type="text" id="address">
+        <span id="quequanNV_error" class="error" style="margin-bottom: 10px;"></span>
+        <br>
+        <label for="">Giới Tính</label>
+        <input type="radio" name="gender" id="male" value="1" style="margin-top: 8px;"> Nam
+        <input type="radio" name="gender" id="famale" value="2" style="margin-left: 38px;"> Nữ
+        <span id="gioiTinhNV_error" class="error"></span>
+        <br>
+        <div class="nut">
+            <button onclick="save()">Lưu lại</button>
+        </div>
+    </div>
+
+    <div class="ListNV">
+        <h2>Danh Sách Nhân Viên</h2>
+        <table width = "600" cellpadding = 0  border="1">
+            <tr>
+                <td>#</td>
+                <td>Họ Tên</td>
+                <td>Mã Nhân Viên</td>
+                <td>Mức Lương</td>
+                <td>Giới Tính</td>
+                <td>Quê Quán</td>
+                <td>Chức Năng</td>
+            </tr>
+        </table>
+    </div>
+
+    <button onclick="showList()">List</button>
+    <button onclick="showFormAdd()">ADD</button>
+    
+    <div id="display">
+       
+    </div>
+    <script>
+        // let mangNV = [
+        //     {
+        //         ten: "Trần Duy Thịnh",
+        //         maNV: "NV001",
+        //         mucLuong: "15000",  
+        //     },
+        //     {
+        //         ten: "Võ Ngọc Thảo",
+        //         maNV: "NV002",
+        //         mucLuong: "40000",  
+        //     },
+        //     {
+        //         ten: "Nguyễn Tùng",
+        //         maNV: "NV003",
+        //         mucLuong: "25000",  
+        //     }
+        // ];
+   
+        // showList();
+        // function showList(){
+        //     let str = '<h1>Danh Sách Nhân Viên</h1>'
+        //     str+= `<p>Số lượng nhân viên: ${mangNV.length}</p>`
+        //     for(let i=0; i<mangNV.length;i++){
+        //         str += `<h3>${mangNV[i].ten + "|" + mangNV[i].maNV + "|" + mangNV[i].mucLuong} <button onclick = "edit(${i})">edit</button> <button onclick = "Delete(${i})">delete</button></h3>`
+        //     }
+        //     document.getElementById("display").innerHTML = str;
+        // }
+
+        function save(){
+            let tenNV = document.getElementById('nameNV').value;
+            let maNV = document.getElementById('idNV').value;
+            let mucLuong = document.getElementById('salaryNV').value;
+            let queQuan = document.getElementById('address').value;
+            let gioiTinh = '';
+            if(document.getElementById('male').checked){
+                gioiTinh = document.getElementById('male').value;
+            }else if(document.getElementById('famale').checked){
+                gioiTinh = document.getElementById('famale').value;
+            }
+            if(_.isEmpty(tenNV)){
+                document.getElementById('tenNV_error').innerHTML = "Vui lòng nhập tên nhân viên";
+            }else{
+                document.getElementById('tenNV_error').innerHTML = "";
+            }
+            if(_.isEmpty(maNV)){
+                document.getElementById('maNV_error').innerHTML = "Vui lòng nhập mã nhân viên";
+            }else{
+                document.getElementById('maNV_error').innerHTML = "";
+            }
+            if(_.isEmpty(mucLuong)){
+                document.getElementById('luongNV_error').innerHTML = "Vui lòng nhập lương nhân viên";
+            }else{
+                document.getElementById('luongNV_error').innerHTML = "";
+            }
+            if(_.isEmpty(queQuan)){
+                document.getElementById('quequanNV_error').innerHTML = "Vui lòng nhập quê quán nhân viên";
+            }else{
+                document.getElementById('quequanNV_error').innerHTML = "";
+            }
+            if(_.isEmpty(gioiTinh)){
+                document.getElementById('gioiTinhNV_error').innerHTML = "Vui lòng chọn giới tính nhân viên";
+            }else{
+                document.getElementById('gioiTinhNV_error').innerHTML = "";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.formNV , .ListNV{
+    border: 1px solid #ccc;
+    width: 350px;
+    margin: 25px;
+    padding: 25px;
+    float: left;
+}
+.ListNV{
+    width: 600px;
+}
+.formNV label{
+    width: 100px;
+    float: left;
+    margin-top: 5px;
+}
+.formNV input[type="text"]{
+    margin-bottom: 10px;
+    width: 230px;
+    padding: 5px;
+}
+.formNV h2 , .ListNV h2{
+    text-align: center;
+    margin-bottom: 25px;
+}
+.nut {
+    width: 100%;
+    text-align: center;
+}
+.nut button{
+    width: 100px;
+    padding: 5px 10px; 
+    margin-top: 15px;
+}
+.error{
+    color: red;
+    margin-left: 100px;
+    margin-top: -10px;
+    font-size: 15px;
+}
