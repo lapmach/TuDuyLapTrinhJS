@@ -10,15 +10,29 @@
     padding: 25px;
     float: left;
 }
+.timKiem{
+    padding-left: 478px;
+    padding-top: 25px;
+}
+
+.timKiem input{
+    width: 400px;
+    padding: 5px;
+}
+
+.timKiem button{
+    padding: 5px;
+}
 .ListNV{
-    width: 600px;
+    width: auto;
 }
 .formNV label{
     width: 100px;
     float: left;
     margin-top: 5px;
 }
-.formNV input[type="text"]{
+.formNV input[type="text"],
+.formNV input[type="number"]{
     margin-bottom: 10px;
     width: 230px;
     padding: 5px;
@@ -30,6 +44,8 @@
 .nut {
     width: 100%;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 .nut button{
     width: 100px;

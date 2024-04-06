@@ -7,7 +7,7 @@
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
     <title>Document</title>
 </head>
-<body>
+<body onload="hienThiDSNV()">
 
     <div class="formNV">
         <h2>Nhập Thông Tin Nhân Viên</h2>
@@ -20,7 +20,7 @@
         <span id="maNV_error" class="error"></span>
         <br>
         <label for="">Mức Lương</label>
-        <input type="text" id="salaryNV">
+        <input type="number" id="salaryNV">
         <span id="luongNV_error" class="error"></span>
         <br>
         <label for="">Quê Quán</label>
@@ -32,32 +32,34 @@
         <input type="radio" name="gender" id="famale" value="2" style="margin-left: 38px;"> Nữ
         <span id="gioiTinhNV_error" class="error"></span>
         <br>
+        <!-- hứng index -->
+        <input type="hidden" id="index">
         <div class="nut">
-            <button onclick="save()">Lưu lại</button>
+            <button onclick="save()" id="save">Lưu lại</button>
+            <button onclick="update()" id="update" style="display: none;">Cập nhật</button>
         </div>
     </div>
+    <div class="timKiem">
+        <input type="text" id="searchItem">
+        <button onclick="search()">Tìm Kiếm</button>
+    </div>
 
-    <div class="ListNV">
+    <div class="ListNV" id="ListNV">
         <h2>Danh Sách Nhân Viên</h2>
-        <table width = "600" cellpadding = 0  border="1">
-            <tr>
-                <td>#</td>
-                <td>Họ Tên</td>
-                <td>Mã Nhân Viên</td>
-                <td>Mức Lương</td>
-                <td>Giới Tính</td>
-                <td>Quê Quán</td>
-                <td>Chức Năng</td>
-            </tr>
+        <table id="display" width = "650" cellpadding = 0  border="1" style="text-align: center; border-collapse:collapse">
+            
+        </table>
+        <table id="displaySearch" width = "650" cellpadding = 0  border="1" style="text-align: center; border-collapse:collapse">
+            
         </table>
     </div>
 
-    <button onclick="showList()">List</button>
-    <button onclick="showFormAdd()">ADD</button>
+    <!-- <button onclick="showList()">List</button>
+    <button onclick="showFormAdd()">ADD</button> -->
     
-    <div id="display">
+    <!-- <div id="display">
        
-    </div>
+    </div> -->
     <script>
         // let mangNV = [
         //     {
@@ -123,7 +125,198 @@
             }else{
                 document.getElementById('gioiTinhNV_error').innerHTML = "";
             }
+
+            if(tenNV && maNV && mucLuong && queQuan && gioiTinh){       
+                
+
+                let DSNhanVien = localStorage.getItem('DSNhanVien') ? JSON.parse(localStorage.getItem('DSNhanVien')) : [];
+
+                let index =  DSNhanVien.findIndex((c)=>parseInt(c.maNV == DSNhanVien.maNV));
+                if(index >= 0){
+                    DSNhanVien.splice(index,1,DSNhanVien);
+                }else{
+                        DSNhanVien.push({
+                        tenNV : tenNV,
+                        maNV : maNV,
+                        mucLuong : mucLuong,
+                        queQuan : queQuan,
+                        gioiTinh : gioiTinh
+                    });
+                }
+
+               
+
+                localStorage.setItem('DSNhanVien', JSON.stringify(DSNhanVien));
+                this.hienThiDSNV();
+                clear();
+            }
         }
+
+        function hienThiDSNV(){
+            let DSNhanVien = localStorage.getItem('DSNhanVien') ? JSON.parse(localStorage.getItem('DSNhanVien')) : [];
+
+            let tieuDeTable = `<tr>
+                    <td>STT</td>
+                    <td>Họ Tên</td>
+                    <td>Mã Nhân Viên</td>
+                    <td>Mức Lương</td>
+                    <td>Giới Tính</td>
+                    <td>Quê Quán</td>
+                    <td>Chức Năng</td>
+                </tr>`;
+
+                if(DSNhanVien.length === 0){
+                    document.getElementById('ListNV').style.display = 'none';
+                    return false;
+                }
+
+                document.getElementById('ListNV').style.display = 'block';
+                DSNhanVien.forEach((nhanVien, index)=>{
+                    let idNV = index;
+                    let hienThiGioiTinh = parseInt(nhanVien.gioiTinh) === 1 ? 'Nam' : 'Nữ' ; 
+
+                    index++;
+                    tieuDeTable += `<tr>
+                    <td>${index}</td>
+                    <td>${nhanVien.tenNV}</td>
+                    <td>${nhanVien.maNV}</td>
+                    <td>${nhanVien.mucLuong}</td>
+                    <td>${hienThiGioiTinh}</td>
+                    <td>${nhanVien.queQuan}</td>
+                    <td>
+                        <button href="" onclick="editNV(${idNV})">Edit</button> | <button href="" onclick="deleteNV(${idNV})">Delete</button>    
+                    </td>
+                </tr>`;
+                })
+                
+                document.getElementById('display').innerHTML = tieuDeTable;
+         }
+
+         function deleteNV(id){
+            let DSNhanVien = localStorage.getItem('DSNhanVien') ? JSON.parse(localStorage.getItem('DSNhanVien')) : [];
+            DSNhanVien.splice(id,1);
+            localStorage.setItem('DSNhanVien', JSON.stringify(DSNhanVien));
+            hienThiDSNV();
+         }
+
+         function editNV(id){
+            let DSNhanVien = localStorage.getItem('DSNhanVien') ? JSON.parse(localStorage.getItem('DSNhanVien')) : [];
+            for(let i=0; i<DSNhanVien.length ; i++){
+                if(id == i){
+                    document.getElementById('nameNV').value = DSNhanVien[i].tenNV;
+                    document.getElementById('idNV').value = DSNhanVien[i].maNV;
+                    document.getElementById('salaryNV').value = DSNhanVien[i].mucLuong;
+                    document.getElementById('address').value = DSNhanVien[i].queQuan;
+                    if(DSNhanVien[i].gioiTinh == 1){
+                        document.getElementById('male').checked = true;
+                        document.getElementById('male').value = DSNhanVien[i].gioiTinh;
+                    }else if(DSNhanVien[i].gioiTinh == 2){
+                        document.getElementById('famale').checked = true;
+                        document.getElementById('famale').value = DSNhanVien[i].gioiTinh;
+                    }
+                    document.getElementById('index').value = id;
+
+                    document.getElementById('update').style.display = "block";
+                    document.getElementById('save').style.display = "none"
+
+                    localStorage.setItem('DSNhanVien', JSON.stringify(DSNhanVien));
+                }
+            }   
+         }
+
+         function update(){
+            let DSNhanVien = localStorage.getItem('DSNhanVien') ? JSON.parse(localStorage.getItem('DSNhanVien')) : [];
+            let index =  document.getElementById('index').value;
+            let duLieuGioiTinh;
+
+            if(document.getElementById('male').checked ){
+                duLieuGioiTinh = document.getElementById('male').value;
+            }else if(document.getElementById('famale').checked){
+                duLieuGioiTinh = document.getElementById('famale').value;
+            }
+
+            DSNhanVien[index] = {
+                tenNV : document.getElementById('nameNV').value,
+                maNV : document.getElementById('idNV').value,
+                mucLuong : document.getElementById('salaryNV').value,
+                queQuan : document.getElementById('address').value,
+                gioiTinh : duLieuGioiTinh,
+            };
+
+            localStorage.setItem('DSNhanVien', JSON.stringify(DSNhanVien));
+            this.hienThiDSNV();
+            clear();
+            document.getElementById('update').style.display = "none";
+            document.getElementById('save').style.display = "block"
+         }
+
+         function clear(){
+            document.getElementById('nameNV').value = "",
+            document.getElementById('idNV').value = "",
+            document.getElementById('salaryNV').value = "",
+            document.getElementById('address').value = "",
+            document.getElementById('male').checked = false;
+            document.getElementById('famale').checked = false;
+         }
+
+         function search(){
+            let DSNhanVien = localStorage.getItem('DSNhanVien') ? JSON.parse(localStorage.getItem('DSNhanVien')) : [];
+            let searchItem = document.getElementById('searchItem').value;
+            let kqSearch = [];
+            // let userSearch = DSNhanVien.filter(value => {
+            //     return value.tenNV.toUpperCase().includes(searchItem.toUpperCase());
+            // })
+            if(search){
+                for(let i=0 ; i<DSNhanVien.length ; i++){
+                    let str = DSNhanVien[i].tenNV;
+                    if(str.toUpperCase().includes(searchItem.toUpperCase())){
+                        let itemSearch = {
+                            tenNV : DSNhanVien[i].tenNV,
+                            maNV : DSNhanVien[i].maNV,
+                            mucLuong : DSNhanVien[i].mucLuong,
+                            gioiTinh : DSNhanVien[i].gioiTinh,
+                            queQuan : DSNhanVien[i].queQuan,
+                        }
+                        kqSearch.push(itemSearch);
+                    }
+                }
+            }
+
+              
+            document.getElementById('displaySearch').style.display = "block";
+            document.getElementById('display').style.display = "none"
+
+            let tieuDeTable = `<tr>
+                    <td>STT</td>
+                    <td>Họ Tên</td>
+                    <td>Mã Nhân Viên</td>
+                    <td>Mức Lương</td>
+                    <td>Giới Tính</td>
+                    <td>Quê Quán</td>
+                    
+                </tr>`;
+
+                
+                kqSearch.forEach((search, index)=>{
+                    let idNV = index;
+                    let hienThiGioiTinh = parseInt(search.gioiTinh) === 1 ? 'Nam' : 'Nữ' ; 
+
+                    index++;
+                    tieuDeTable += `<tr>
+                    <td>${index}</td>
+                    <td>${search.tenNV}</td>
+                    <td>${search.maNV}</td>
+                    <td>${search.mucLuong}</td>
+                    <td>${hienThiGioiTinh}</td>
+                    <td>${search.queQuan}</td>
+                   
+                </tr>`;
+                })
+               
+                
+                document.getElementById('displaySearch').innerHTML = tieuDeTable;
+            
+         }
     </script>
 
 </body>
