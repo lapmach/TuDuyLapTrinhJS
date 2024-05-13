@@ -1,8 +1,13 @@
 
 
 let snt = (x) => {
-    if(x < 2)
+    if(x < 2){
         return false;
+    }
+        
+    if(x == 2){
+        return true;
+    }
 
     for(let i=2 ; i<x-1 ;i++){
         if(x%i == 0){
