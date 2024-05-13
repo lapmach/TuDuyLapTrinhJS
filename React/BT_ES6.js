@@ -5,10 +5,17 @@ const birds = [
     {"ID": "SP11", "Name": "Bell's Sparrow", "Type": "Sparrow" },
     {"ID": "DV2", "Name": "Mourning Dove", "Type": "Dove" }
 ];
-
+//them moi
+birds.push({"ID": "HKT6", "Name": "TiTi", "Type": "CaSi"});
+//xoa 
+birds.splice(0,1);
+// in ra
 birds.map(x =>{
-        console.log("id: "+x.ID);
+        console.log("id: "+x.ID + " - Name:" + x.Name +" - Type: "+ x.Type) ;
 })
+
+
+
 
 // let sum = 0;
 // listProduct.map(x =>{
