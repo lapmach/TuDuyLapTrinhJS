@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"></script>
+</head>
+<body>
+    <img src="" alt="">
+    <script>
+        axios.get('https://api-kent.netlify.app/.netlify/functions/api/vn').then((res)=>{
+            let data = res.data.detail;
+            let list = [];
+
+            for (let key in data) {
+                list.push(data[key]);
+            }
+
+            list.sort((a,b) => parseInt(a.cases) < parseInt(b.cases));
+            console.log(list[0]);
+            console.log(list[1]);
+            console.log(list[2]);
+        })
+    </script>
+</body>
+</html>

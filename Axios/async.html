@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"></script>
+</head>
+
+<body>
+    <script>
+        let s1;
+        let s2;
+        let s3;
+        let tong = 0;
+        
+        async function chay(){
+           s1 = axios.get('http://localhost:3000/students/1')
+           s2 = axios.get('http://localhost:3000/students/2')
+           s3 = axios.get('http://localhost:3000/students/3')
+           tong = s1.score + s2.score + s3.score ;
+           console.log(tong);
+        }
+
+
+        //tinh tong diem 3 hs tren
+    </script>
+</body>
+
+</html>

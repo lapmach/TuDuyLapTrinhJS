@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.min.js"></script>
+</head>
+
+<body>
+    <img src="" alt="" style="width: 50px;">
+    <input type="text" id="s" oninput="search()">
+    <div id="list">
+        <span>flag</span>
+        <span>name</span>
+        <span>area</span>
+        <span>population</span>
+    </div>
+    <script>
+        axios.get('https://restcountries.com/v3.1/all?fields=name,area,population,flags').then((res) => {
+            let list = res.data;
+            let str = ``;
+            //bai 1
+            list.map(item => {
+                str += `<div><img  alt='' style='width: 50px;' src='${item.flags.png}'>, ${item.name.common}, ${item.area}, ${item.population}</div>`
+            })
+            document.getElementById('list').innerHTML = str;
+            // for (let i = 0; i < list.length; i++) {
+            //     document.write('<p><img src="'+list[i].flags.png+'" style="width: 50px;"></p>');
+            //     document.write('<p> name:'+list[i].name.common+'</p>');
+            //     document.write('<p> aria:'+list[i].area+'</p>');
+            //     document.write('<p> population:'+list[i].population+'</p>');
+            // }
+            //bai2
+            // let max = list[0].area ;
+            // let max2 = list[0].name.common;
+            // for (let i = 0; i < list.length; i++) {
+            //     if(list[i].area > max){
+            //         max = list[i].area;
+            //         max2 = list[i].name.common;
+            //     }   
+            // }
+            // document.write(max + max2);
+            //bai3
+            // let max = list[0].population ;
+            // let max2 = list[0].name.common;
+            // for (let i = 0; i < list.length; i++) {
+            //     if(list[i].population > max){
+            //         max = list[i].population;
+            //         max2 = list[i].name.common;
+            //     }   
+            // }
+            // document.write(max + max2);
+        })
+
+       // Anh Yêu Nguyễn Hải Mỹ Duyên ❤️ 
+
+       
+        function search(){
+            let key = document.getElementById('s').value;
+            console.log(key);
+            axios.get('https://restcountries.com/v3.1/all?fields=name,area,population,flags').then((res) => {
+            let list = res.data;
+            let str = ``;
+            //bai 1
+            list.map(item => {
+                if(item.name.common.toUpperCase().includes(key.toUpperCase())){
+                    str += `<div><img  alt='' style='width: 50px;' src='${item.flags.png}'>, ${item.name.common}, ${item.area}, ${item.population}</div>`
+                }
+            })
+            document.getElementById('list').innerHTML = str;
+            
+            })
+        }
+    </script>
+</body>
+
+</html>
