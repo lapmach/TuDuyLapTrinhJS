@@ -1,7 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
-import Student from "./Demo" ;
-import CComponent from "./Ccombonent";
+import Student from "./Pages/Student";
+import CComponent from "./Pages/Ccombonent";
+import Ccombonent2 from './Pages/Ccomponent2';
+import FComponent from './Pages/Fcomponent';
+import Country from './Pages/Country';
+import { Link, Route, Routes } from 'react-router-dom'
+import AddStudent from './Pages/AddStudent';
+import Ccomponent from './Pages/Ccombonent';
+import Login from './Pages/Login';
+import Home from './Pages/Home';
+import Admin from './Pages/Admin';
+import Register from './Pages/Register2';
+import Alert from './Pages/Alert';
+
 
 // const students = [
 //   {
@@ -39,11 +51,34 @@ import CComponent from "./Ccombonent";
 function App() {
   return (
     <>
+    <Alert text='Cảnh báo! Tài nguyên bạn vừa truy cập không tồn tại.'></Alert>
       {/* {students.map((e, index) => (
         <p>{index},{e.name}, {e.score}, {e.action}</p>
       ))} */}
-  
-      <CComponent></CComponent>
+
+
+      {/* <Ccombonent2></Ccombonent2>
+      <FComponent></FComponent> */}
+      {/* <Country></Country> */}
+
+      
+      <Link to='Students'>student</Link>|
+      <Link to='AddStudent'>AddStudent</Link>|
+      <Link to='Country'>Country</Link>|
+      <Link to='f'>Fcomponent</Link>|
+      
+      <Routes>
+        <Route path='Students' element={<Student />}></Route>
+        <Route path='f/:id' element={<FComponent />}></Route>
+        <Route path='c' element={<Ccomponent />}></Route>
+        <Route path='country' element={<Country />}></Route>
+        <Route path="AddStudent" element={<AddStudent />}></Route>
+        <Route path="/" element={<Login/>}></Route>
+        <Route path="home" element={<Home/>}></Route>
+        <Route path="admin" element={<Admin/>}></Route>
+        <Route path="register" element={<Register/>}></Route>
+      </Routes>
+
     </>
   );
 }

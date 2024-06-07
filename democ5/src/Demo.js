@@ -1,43 +1,45 @@
-const students = [
-    {
-        id: 1,
-        name: 'Chu Xuân Hiếu',
-        description: 'Đi gội đầu lâu, hay ngủ gật',
-        action: 'Xem xét',
-        score: 6
-    }, {
-        id: 2,
-        name: 'Nguyễn Thị Quỳnh',
-        description: 'Nói chuyện nhiều',
-        action: 'Xem xét',
-        score: 7
-    }, {
-        id: 3,
-        name: 'Trần Văn Hiệp',
-        description: 'Thiếu tập trung, chưa tích cực khi học',
-        action: 'Xem xét',
-        score: 4
-    }, {
-        id: 4,
-        name: 'Bui Huu Nghia',
-        description: 'Thiếu tập trung, chưa tích cực khi học',
-        action: 'Xem xét',
-        score: 5
-    }, {
-        id: 5,
-        name: 'Trương Hoàng Anh',
-        description: 'Đi ra ngoài lâu',
-        action: 'Xem xét',
-        score: 5
-    },
-  ];
+import React , {Component} from "react";
+import axios from "axios";
+// let x = 10;
+class Student extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            x:10,
+            list: [],
+        }
+    }
 
-export default function Student(){
-    return (
-        <>
-        {students.map((e, index) => (
-        <p>{index},{e.name}, {e.score}, {e.action}</p>
-        ))}
-        </>
-    )
+    getAll() {
+        axios.get('http://localhost:3000/students').then((res)=>{
+            this.setState({list:res.data});
+        });
+    }
+    componentDidMount(){
+       this.getAll();
+    }
+    
+    render(){
+        return(
+            <>
+            <h1>class component {this.state.x}</h1>;
+            {this.state.list.map((e) => (
+                <h3>
+                    {e.name} , {e.score}
+                    <button 
+                        onClick={()=> {
+                            axios.delete('http://localhost:3000/students/' + e.id).then((res)=>{
+                                alert("Xoa Thanh Cong");
+                                this.getAll();
+                            });
+                        }}
+                    >Delete</button>
+                </h3>
+            ))}
+            </>
+           
+        )
+    }
 }
+
+export default Student;
