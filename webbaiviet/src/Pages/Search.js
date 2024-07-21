@@ -5,8 +5,8 @@ export default function Search(){
     let [cxt, setCXT] = useContext(MyContext);
     return(
         <>
-        <input onChange={(e) => {
-            setCXT({name: e.target.value});
+        <input placeholder="Search" onChange={(e) => {
+            setCXT({key: e.target.value});
         }}></input>
         </>
     )

@@ -1,0 +1,1172 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.mr_top{
+    margin-top: 14%;
+}
+
+
+
+header{
+    background-color: #120414;
+}
+
+.nav-item a{
+    color: white;
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.nav-item a:hover{
+    color: #fe6b5e !important;
+}
+
+nav img{
+    height: 50px;
+}
+
+.hoverMenu:hover >.menuCon{
+    display: block;
+}
+
+.header-right{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header-right i{
+    color: white;
+    margin: 10px;
+    font-size: 18px;
+}
+.block-menu{
+    display: flex;
+    justify-content: center;
+}
+
+.redColor{
+    color: #fe6b5e !important;
+}
+
+.bg_dark{
+    background-color: #120414 !important ;
+    color: white !important ;
+}
+
+.banner{
+    position: relative;
+}
+
+.banner .anhBanner{
+    width: 100%;
+    height: 600px;
+}
+
+.bg_chinhSach{
+    background-color: #3f3fdb;
+    z-index: 1;
+    bottom: -140px;
+    left: 0;
+    right: 0;
+    position: absolute;
+    padding: 28px 40px 15px 40px;
+}
+
+.chiTietChinhSach i{
+    font-size: 40px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.chiTietChinhSach h4{
+    color: white;
+    font-size: 16px;
+}
+
+.chiTietChinhSach p{
+    color: white;
+    font-size: 14px;
+    font-weight: 100;
+}
+
+.tieuDe{
+    z-index: 2;
+    position: relative;
+}
+
+.tieuDe h1{
+    color: #3f3fdb;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+}
+
+.tieuDe p {
+    font-weight: 100;
+    letter-spacing: 0.5px;
+}
+
+/* Gio Hang */
+.gioHang{
+    position: relative;
+    cursor: pointer;
+}
+
+.ThongBaoGioHang{
+    position: absolute;
+    height: auto;
+    right: -12px;
+    top: 100%;
+    background-color: white;
+    box-shadow: 0 2px 8px gray;
+    width: 390px;
+    margin-top: 10px;
+    display: none;
+    animation: thongbaoToDan ease-in 0.3s;
+    transform-origin: 90% top;
+    will-change: opacity,transform;
+    z-index: 5;
+}
+
+@keyframes thongbaoToDan {
+    from{
+        opacity: 0;
+        transform: scale(0);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.gioHang:hover .ThongBaoGioHang {
+    display: block;
+}
+
+.ThongBaoGioHang .headerOf_Notify2{
+    padding: 10px;
+}
+
+.ThongBaoGioHang .headerOf_Notify2 h3{
+    color: var(--text-color);
+    opacity: 40%;
+    font-size: 13px;
+}
+
+.ThongBaoGioHang .sanPhamThongBao2{
+    height: 70px;
+    background-color:	white;
+    padding: 10px;
+}
+
+.ThongBaoGioHang .sanPhamThongBao2 .hinh2{
+    float: left;
+    width: 17%;
+    height: 100%;
+    
+}
+
+.ThongBaoGioHang .sanPhamThongBao2 .hinh2 img{
+    height: 50px;
+    width: 50px;
+    border: 0.2px solid rgba(55, 53, 53,0.3);
+}
+
+.ThongBaoGioHang .sanPhamThongBao2 .text2{
+    float: left;
+    width: 60%;
+    color: var(--text-color);
+}
+
+.ThongBaoGioHang .sanPhamThongBao2 .text2 h4{
+    font-weight: 400;
+    font-size: 14px;
+    color: black;
+}
+
+.ThongBaoGioHang .sanPhamThongBao2 .gia{
+    float: left;
+    width: 23%;
+} 
+
+.ThongBaoGioHang .sanPhamThongBao2 .gia p{
+    font-size: 14px;
+    color: #3f3fdb;
+} 
+
+
+.ThongBaoGioHang .buttonXemALL2{
+    text-align: center;
+    background-color: #3f3fdb;
+    height: 40px;
+    padding-top: 5px;
+    transition: all ease 0.4s;
+}
+
+.ThongBaoGioHang .buttonXemALL2 a{
+    text-decoration: none;
+    color: var(--white-color);
+    font-size: 14px;
+}
+
+.ThongBaoGioHang::before{
+    content: "";
+    border-width: 20px 30px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+    top: -30px;
+    position: absolute;
+    right: 0px;
+}
+
+.ThongBaoGioHang .buttonXemALL2:active{
+    background-color: #D69D52;
+}
+
+.sanPhamThongBao2:hover{
+    background-color: #fe6b5e1f;
+    cursor: pointer;
+}
+
+.ThongBaoGioHang .buttonXemALL2:hover{
+    background-color: #fe6b5e;
+    cursor: pointer;
+}
+
+/* San Pham Moi */
+
+.sanPhamMoi img{
+    height: auto;
+    width: 100%;
+}
+
+.sanPhamMoi h5{
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.sanPhamMoi h6{
+    margin-top: 10px;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.301);
+}
+
+.sanPhamMoi p{
+    margin-top: -5px;
+    color: #fe6b5e;
+    position: relative;
+}
+
+
+.overlay{
+    width: 90%;
+    height: 73%;
+    background: linear-gradient(#3f3fdb51, #fe6b5e61);
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.sanPhamMoi:hover .overlay{
+    opacity: 1;
+}
+
+.iconMuaHang{
+    position: absolute;
+    text-align: center;
+    /* top: 40%;
+    transform: translateY(-60%); */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    bottom: 0;
+    transition: 0.5s;
+}
+
+.iconMuaHang i{
+    color: white;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.sanPhamMoi:hover .iconMuaHang{
+    opacity: 1;
+    bottom: 40%;
+}
+
+button{
+    background-color: #3f3fdb;
+    color: white;
+    font-size: 20px;
+    border: none;
+    text-align: center;
+    /* padding: 15px 50px; */
+    /* margin-top: 30px; */
+    transition: 0.5s;
+}
+
+button:hover{
+    background-color: #fe6b5e;
+}
+
+.section-2 .hinhBanner{
+    height: 330px;
+    width: 100%;
+    margin-bottom: 40px;
+    cursor: pointer;
+}
+
+.section-3 .phuKienTrai{
+    position: relative;
+    margin-right: 10px;
+    overflow: hidden;
+}
+.section-3 .phuKienPhai {
+    position: relative;
+    overflow: hidden;
+}
+
+.section-3 .phuKienTrai img{
+    height: 490px;
+    width: 106%;
+    transition: all 0.5s;
+}
+
+.section-3 .phuKienTrai .noiDungPhuKien,
+.section-3 .phuKienPhai .noiDungPhuKien{
+    position: absolute;
+    bottom: 10px;
+    left: 40px;
+    color: white;
+    z-index: 2;
+}
+
+.noiDungPhuKien p{
+    font-weight: 100;
+}
+
+.noiDungPhuKien i{
+    margin-left: 5px;
+    margin-top: 5px;
+    color: #3f3fdb;
+}
+
+.noiDungPhuKien p:hover,
+.noiDungPhuKien h2:hover{
+    color: #fe6b5e;
+    cursor: pointer;
+}
+
+.section-3 .phuKienPhai img{
+    height: 230px;
+    width: 100%;
+    transition: all 0.5s;
+}
+
+.section-3 .phuKienTrai:hover .image img{
+    transform: scale(1.2);
+}
+
+.section-3 .phuKienPhai:hover .image img{
+    transform: scale(1.2);
+}
+
+.section-3 .phuKienPhai:last-child{
+    margin-top: 30px;
+}
+
+.phuKienTrai::before{
+    content: "";
+    position: absolute;
+    width: 106%;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgba(0,0,0,0.8) 0, transparent);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.phuKienPhai::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(0deg, rgba(0,0,0,0.8) 0, transparent);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.section-4{
+    background: url(../../public/img/feedback7.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    padding-bottom: 60px;
+}
+
+.pdtop{
+    padding-top: 60px;
+}
+
+.section-4 .overlay2{
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.feedBack img{
+    max-width: 100%;
+    height: auto;
+    z-index: 2;
+    position: relative;
+    margin-top: 30px;
+}
+
+.tinTuc{
+    margin-top: 20px;
+}
+
+.tinTuc img{
+    width: 100%;
+    height: 240px;
+    cursor: pointer;
+}
+
+.tinTuc h1{
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.tinTuc h1:hover{
+    color: #fe6b5e;
+    cursor: pointer;
+}
+
+.tinTuc p{
+    font-size: 14px;
+    line-height: 20px;
+    color: #656565;
+    margin-bottom: 10px;
+    font-weight: 100;
+}
+
+.tinTuc .thongTinChiTiet{
+    display: flex;
+    justify-content: space-between;
+}
+
+.thongTinChiTiet_benTrai{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.thongTinChiTiet_benTrai h2,
+.thongTinChiTiet_benPhai h2{
+    font-size: 13px;
+    font-weight: 100;
+}
+
+.thongTinChiTiet_benPhai{
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.thongTinChiTiet_benPhai i,
+.thongTinChiTiet_benTrai i{
+    font-size: 13px;
+    font-weight: 100;
+    margin-right: 10px;
+}
+
+span {
+    font-size: 14px;
+}
+
+span:hover{
+    color: #fe6b5e;
+    cursor: pointer;
+}
+
+.iconTinTuc{
+    margin-left: 8px;
+    margin-top: 5px;
+    color: #3f3fdb;
+}
+
+footer{
+    position: relative;
+    /* margin-top: 40px; */
+}
+
+footer .phan1 img{
+    width: 20%;
+    margin-bottom: 12px;
+    margin-left: 9px;
+    margin-right: 20px;
+}
+
+.background_Footer{
+    background: url(../../public/img/backgroundfooter.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: cover;
+}
+
+.overlayFooter{
+    width: 100%;
+    position: absolute;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.noiDung{
+    z-index: 2;
+    position: relative;
+    color: white;
+}
+
+.phan1{
+    margin-top: 60px;
+}
+
+.phan1 .noiDungChiTiet{
+    display: flex;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.phan1 .noiDungChiTiet i{
+    font-size: 18px;
+    margin-top: 4px !important;
+}
+
+.phan2 a{
+    font-weight: 100;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.phan2 a:hover{
+    color: #fe6b5e;
+}
+
+.phan2 h4,
+.phan3 h4{
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-top: 60px;
+    letter-spacing: 1px;
+}
+
+.phan3 .dangKiNhanThongTin{
+    margin-bottom: 30px;
+}
+
+.phan3 .dangKiNhanThongTin input{
+    height: 45px;
+    border: none;
+    outline: none;
+    padding-left: 15px;
+    font-weight: 100;
+}
+
+.phan3 .dangKiNhanThongTin button{
+    height: 46px;
+    width: 78px;
+    text-align: center;
+    margin-top: -1px;
+    font-size: 17px;
+    padding: 10px 12px;
+}
+
+.iconSocial i{
+    font-size: 20px;
+    color: white;
+    line-height: 40px;
+}
+
+.iconVuong:hover{
+    background-color: #fe6b5e;
+    cursor: pointer;
+}
+
+.iconVuong{
+    width: 40px;
+    height: 40px;
+    background-color: #3f3fdb;
+    margin-right: 10px;
+    text-align: center;
+    transition: all .5s;
+}
+
+.phan2 ,
+.phan3{
+    padding-left: 69px;
+}
+
+.phan2 p{
+    margin-top: 15px;
+}
+
+hr{
+    z-index: 2;
+    width: 100%;
+    height: 2px;
+    border-bottom: 0.5px solid white;
+}
+
+.banQuyen{
+    width: 100%;
+}
+
+.banQuyen h5{
+    font-size: 14px;
+    color: #ccc;
+}
+
+.timKiem{
+    position: relative;
+    cursor: pointer;
+}
+
+.timKiemChiTiet{
+    position: absolute;
+    height: 42px;
+    width: 300px;
+    z-index: 5;
+    display: flex;
+    font-size: 14px;
+    color: #999ea1;
+    background: #fff;
+    right: 0px;
+    top: 100%;
+    box-shadow: 0 2px 8px gray;
+    display: none;
+    animation: thongbaoToDan ease-in 0.3s;
+    transform-origin: 90% top;
+    will-change: opacity,transform;
+    justify-content: space-between;
+}
+
+.timKiem:hover .timKiemChiTiet{
+    display: block
+}
+
+.timKiemChiTiet::before{
+    content: "";
+    border-width: 16px 12px;
+    border-style: solid;
+    border-color: transparent transparent white transparent;
+    top: -25px;
+    position: absolute;
+    right: 7px;
+}
+
+.timKiemChiTiet input{
+    width: 230px;
+    outline: none;
+    border: none;
+    padding-left: 15px;
+    font-weight: 100;
+}
+
+.timKiemChiTiet i{
+    color: black;
+    margin-left: 38px;
+}
+
+.taiKhoan{
+    cursor: pointer;
+}
+
+.a{
+    position: relative;
+}
+
+.taiKhoan .userName{
+    position: absolute;
+    top: 29px;
+    left: 50%;
+    width: auto;
+    height: 18px;
+    transform: translateX(-50%);
+}
+
+/* phần đăng nhập */
+
+.dangNhap{
+    display: flex;
+}
+
+.dangNhap .phanHinhDangNhap img{
+    height: 669px;
+    margin-left: 120px;
+    /* margin-top: -5px; */
+    width: 480px;
+}
+
+.dangNhap .phanDangNhap{
+    padding-right: 260px;
+    margin-top: 30px;
+    /* margin-left: 40px; */
+}
+
+.dangNhap .phanDangNhap h3{
+    font-size: 26px;
+    color: #D3413F;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.dangNhap .phanDangNhap .formDN{
+    position: relative;
+}
+
+.dangNhap .phanDangNhap .formDN input{
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 0px;
+    font-size: 14px;
+    margin-top: 35px;
+}
+
+.dangNhap .phanDangNhap .formDN .label{
+    position: absolute;
+    top: 22%;
+    left: 0;
+    font-size: 16px;
+    color: black;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+/* .dangNhap .phanDangNhap .formDN input:focus ~ .dangNhap .phanDangNhap .formDN .label{
+    top: -5px;
+} */
+
+input:focus ~ label,
+input:valid ~ label{
+    transform: translateY(-160%);
+    font-size: 10px;
+}
+
+.phanDangNhap button{
+    border-radius: 40px;
+    background-color: #D3413F;
+    border: none;
+    padding: 13px 147px;
+    font-size: 16px;
+    transition: all ease 0.3s;
+    margin-top: 22px;
+}
+.phanDangNhap button:hover{
+    background-color: #D69D52;
+}
+
+.phanDangNhap .check{
+    font-size: 14px;
+    margin-left: 6px;
+    margin-top: 10px;
+}
+.phanDangNhap .nutDNFB{
+    color: white;
+    padding: 10px 84px;
+    background-color: #3C5997;
+}
+
+.phanDangNhap .nutDNFB i{
+    margin-right: 8px;
+}
+
+.phanDangNhap .nutDNGG{
+    color: white;
+    padding: 10px 88px;
+    background-color: rgb(49, 44, 44);
+}
+
+.phanDangNhap .nutDNGG i{
+    margin-right: 8px;
+}
+
+.dangNhap .phanDangNhap h5{
+    margin-top: 25px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.dangNhap .phanDangNhap a{
+    padding-left: 5x;
+    color: black;
+    font-weight: bold;
+}
+
+.formDN i{
+    margin-bottom: -5px;
+    position: absolute;
+    top: 15px;
+    left: -22px;
+    font-size: 18px;
+}
+
+/* sanpham */
+.linkWeb{
+    display: flex;
+    background-color: #811615;
+    padding: 5px 0px 5px 5px;
+
+}
+
+.linkWeb a{
+    text-decoration: none;
+    color: white;
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.linkWeb i{
+    color: white;
+    font-size: 11px;
+}
+
+.body{
+    background-color: white;
+}
+
+.body .tieuDe{
+    text-align: center;
+}
+
+.tieuDe h1{
+    color: #D69D52;
+    text-transform: uppercase;
+    padding-top: 10px;
+}
+
+.tenContent .content{
+    background-color: #D3413F;
+    color: white;
+    width: 100%;
+    height: 95px;
+    margin-top: 20px;
+    float: left;
+    border-radius: 12px;
+    display: flex;
+}
+
+.tenContent .content i{
+    font-size: 40px;
+    line-height: 90px;
+    margin-left: 25px;
+}
+
+.tenContent .content h5{
+    font-size: 35px;
+    text-align: left;
+    line-height: 95px;
+    padding-left: 20px;
+    text-transform: uppercase;
+}
+
+.sanpham{
+    width: 290px;
+    height: 400px;
+    border: 1px solid black;
+    margin: 0 auto;
+    border-radius: 15px;
+    margin-top: 20px;
+    float:left;
+    background-color: white;
+}
+
+.sanpham .hinh{
+    width: 100%;
+    height: 200px;
+}
+
+.sanpham .hinh img{
+    width: 95%;
+    height: 100%;
+    text-align: center;
+    border-radius: 15px;
+    padding-left: 5px;
+}
+
+.noidung{
+    width: 100%;
+    height: 150px;
+    text-align: center;
+}
+
+.noidung h4{
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+}
+
+.noidung h6{
+    font-size: 16px;
+    color: red;
+    padding-top: 5px;
+    font-weight: bold;
+}
+
+.noidung p{
+    padding: 10px 10px 5px 10px;
+    text-align: justify;
+    font-size: 12px;
+    height: 85px;
+    color: #000;
+}
+
+
+.nut button {
+    padding: 10px 50px 10px 50px;
+    color: white;
+    background-color: #D3413F;
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    margin-top: -23px;
+    transition: all ease 0.4s;
+}
+
+.nut button:hover{
+    background-color: #D69D52;
+}
+
+.divChuaSP a{
+    text-decoration: none;
+}
+
+.sanpham:hover{
+    border: 3px solid #D69D52;
+}
+
+/* Phần slide */
+
+.slideshowTinTuc{
+    width: 100%;
+    height: auto;
+    border: none;
+    position: relative;
+    text-align: center;
+}
+
+.slideshowTinTuc img{
+    height: 290px;
+    width: 100%;
+    position: relative;
+}
+
+.slideshowTinTuc .overlay2{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.slideshowTinTuc .content{
+    position: absolute;
+    top: 108px;
+    left: 0;
+    right: 0;
+    color: white;
+    z-index: 2;
+    text-align: center;
+    line-height: 38px;
+}
+
+.slideshowTinTuc .content h2{
+    font-size: 46px;
+    color: white;
+    margin-bottom: 15px;
+    animation: moDan2 ease 1s;
+    font-weight: bold;
+}
+
+@keyframes moDan2{
+    from{
+        transform: translateX(2000px);
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Sản Phẩm */
+
+/* phần lọc ra sản phẩm */
+
+.sapXep{
+    margin-top: 25px;
+    font-weight: 100;
+}
+
+.sapXep input{
+    margin-right: 10px;
+    font-weight: 100;
+    margin-bottom: 12px;
+}
+
+.sapXep .sapXepChiTiet{
+    font-weight: 100;
+}
+
+.sapXep ul li{
+    list-style-type: none;
+}
+
+.sapXep .size{
+    width: 50px;
+    height: 25px;
+    margin-right: 10px;
+    background-color: white;
+    color: black;
+    border: 1px solid #E7E7E7;
+    text-align: center;
+    font-size: 14px;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-weight: 100;
+}
+
+.sapXep .size:hover{
+    border-color: #fe6b5e;
+    color: #fe6b5e;
+    transition: all 0.01s;
+}
+
+.danhSach{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mauSac{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* Phần sản phẩm */
+
+.sanPham{
+    margin-top: 30px;
+    position: relative;
+}
+
+.sanPham img{
+    /* height: 263px; */
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.sanPham h2{
+    color: black;
+    font-size: 14px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.sanPham a{
+    font-size: 14px;
+    font-weight: 100;
+    text-decoration: none;
+    color: #333;
+    margin: 5px 0px;
+}
+
+.sanPham a:hover{
+    color: #fe6b5e;
+}
+
+.gia{
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+.gia .giaCu{
+    text-decoration: line-through;
+}
+
+.gia .giaMoi{
+    color: #fe6b5e;
+}
+
+.overlay3{
+    width: 100%;
+    height: 89%;
+    background: linear-gradient(#3f3fdb51, #fe6b5e61);
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.sanPham:hover .overlay3{
+    opacity: 1;
+}
+
+.sanPham:hover .iconMuaHang{
+    opacity: 1;
+    bottom: 50%;
+}
+
+.nutChuyenTrang{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.nutChuyenTrang .so1,
+.nutChuyenTrang .so2,
+.nutChuyenTrang .iconChuyenTrang{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-right: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.nutChuyenTrang .so1{
+    background-color: #3f3fdb;
+    color: white;
+}
+
+.nutChuyenTrang .so2,
+.nutChuyenTrang .iconChuyenTrang{
+    background-color: #f3f5f7;
+    color: #333;
+}
+
+.nutChuyenTrang .so2:hover,
+.nutChuyenTrang .iconChuyenTrang:hover{
+    background-color: #3f3fdb;
+    color: white;
+}

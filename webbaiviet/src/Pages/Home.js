@@ -1,14 +1,19 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { Field, Formik ,Form} from "formik";
-
+import { MyContext } from "../MyContext";
 export default function Home() {
     let navigate = useNavigate();
+    let [cxt, setCXT] = useContext(MyContext);
     let [list, setList] = useState([]);
     useEffect(() => {
-       getList();
-    }, []);
+        axios.get("http://localhost:3000/posts/").then((res) => {
+            let list = res.data.filter(e => e.title.toLowerCase().includes(cxt.key));
+            setList(list);
+        });
+    //    getList();
+    }, [cxt]);
     let getList = () => {
         axios.get('http://localhost:3000/posts').then((res) => {
             setList(res.data);
@@ -17,25 +22,8 @@ export default function Home() {
 
     return (
         <>
-            <Formik
-                initialValues={{
-                    title: "",
-                }}
-                onSubmit={(values) => {
-                    axios.get("http://localhost:3000/posts/", values).then((res) => {
-                        let newList = list;
-                        console.log(newList);
-                        newList = res.data.filter(e => e.title.toLowerCase().includes(values));
-                       
-                        setList(newList);
-                    });
-                }}
-            >
-                <Form>
-                    <Field name={"title"} placeholder={"Search title"} />
-                    <button>Search</button>
-                </Form>
-            </Formik>
+            <h2>User: {cxt.user && cxt.user.username}</h2>
+            <Link to={"add"}>Add new post</Link>
             <div className="text-center">
                 <table class="table">
                     <thead>

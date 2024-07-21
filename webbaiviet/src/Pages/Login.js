@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { Field, Formik ,Form} from "formik";
+import { MyContext } from "../MyContext";
 export default function Login() {
     let navigate = useNavigate();
+    let [cxt, setCXT] = useContext(MyContext);
     return (
         <>
             <h1>Login</h1>
@@ -15,6 +17,7 @@ export default function Login() {
             onSubmit={(values) =>{
                 axios.post("http://localhost:3000/users/login", values).then(x => {
                     alert("Đăng nhập thành công");
+                    setCXT({...cxt,user: values});
                     navigate("/post");
                 }).catch(e=>{
                     alert("username hoặc password sai !!!");
